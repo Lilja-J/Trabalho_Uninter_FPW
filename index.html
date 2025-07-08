@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jean Vitor Lilja - Portfólio Pessoal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <h1>Jean Vitor Lilja</h1>
+            <p>Desenvolvedor Junior</p>
+        </header>
+
+        <nav class="navbar">
+            <a data-page="sobre" class="nav-link active">Sobre Mim</a>
+            <a data-page="formacao" class="nav-link">Formação</a>
+            <a data-page="portfolio" class="nav-link">Portfólio</a>
+            <a data-page="contato" class="nav-link">Contato</a>
+        </nav>
+
+        <main class="main-content">
+
+            <section id="sobre" class="content-section active">
+                <h2>Sobre Mim</h2>
+                <img src="imgs/foto-perfil.jpg" alt="Foto de Perfil" class="profile-pic">
+                <p>
+                    Olá! Eu sou o Jean, estou há quase dois anos no mercado de tecnologia, sou apaixonado por
+                    programação desde muito novo e sempre buscando soluções criativas para problemas reais. Desde cedo
+                    fui inserido na internet, ainda na época onde a "blogosfera" era popular, o que me levou a explorar
+                    o mundo do desenvolvimento web a partir de frameworks facilitadores, e o desenvolvimento web é onde
+                    busco programar e me aprimorar desde a adolescência.
+                </p>
+                <p>
+                    No meu tempo livre, gosto de jogar xadrez, correr, ler livros, e quando sobra um tempo também sou
+                    apaixonado por tradução (do inglês, espanhol e arranho um pouco de transliteração do cirílico para o
+                    nosso alfabeto). Acredito que a criatividade e a resolução de problemas são habilidades que se
+                    aplicam tanto na vida profissional quanto nos meus hobbies, e busco sempre evoluir sem nunca deixar
+                    qualquer revés me abalar, porque dar passos atrás faz parte do.
+                </p>
+            </section>
+
+            <section id="formacao" class="content-section">
+                <h2>Formação Acadêmica</h2>
+                <p>
+                    <strong>Instituição de Ensino:</strong> Centro Universitário Internacional - UNINTER<br>
+                    <strong>Curso:</strong> Análise e Desenvolvimento de Sistemas<br>
+                    <strong>Período:</strong> 10/2024 - Cursando
+                </p>
+
+                <h2 style="margin-top: 30px;">Idiomas</h2>
+                <p>
+                    <strong>Português:</strong> Nativo<br>
+                    <strong>Inglês:</strong> Nível intermediário<br>
+                    <strong>Espanhol:</strong> Nível intermediário<br>
+                    <strong>Russo:</strong> Nível básico
+                </p>
+            </section>
+
+            <section id="portfolio" class="content-section">
+                <h2>Meus Projetos</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="imgs/python-acai-projeto.png.png" alt="Imagem do Projeto Loja de Açaí">
+                        <h3>Lojinha de Açaí</h3>
+                        <p>Este é o projeto de uma loja de açaí que foi feito em python. Ele apresenta uma tabela como
+                            cardápio e permite ao usuário que escolha o produto e tamanho da opção desejada, também
+                            podendo escolher mais de uma opção.</p>
+                        <a href="https://github.com/Lilja-J/Projetos-Uninter/blob/e4bc96f099631aeab5a89c2e6da62416afa37e70/TrabalhoPratico_LPA/Quest%C3%A3o2.py"
+                            target="_blank">Ver Projeto</a>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="imgs/python-livraria-projeto.png" alt="Imagem do Projeto Livraria">
+                        <h3>Arquivo Livraria</h3>
+                        <p>Projeto construído em python de um sistema de gerenciamento de livros para uma Livraria. Nele
+                            se pode fazer operações de adições, remoções, listagem, listagem por autor, e ver por ID.
+                        </p>
+                        <a href="https://github.com/Lilja-J/Projetos-Uninter/blob/e4bc96f099631aeab5a89c2e6da62416afa37e70/TrabalhoPratico_LPA/Quest%C3%A3o4.py"
+                            target="_blank">Ver Projeto</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contato" class="content-section">
+                <h2>Entre em Contato</h2>
+                <p>Se você tiver alguma pergunta ou quiser conversar sobre um projeto, ou contribuição, preencha o
+                    formulário abaixo.</p>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu email">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="Deixe sua mensagem aqui..."></textarea>
+                    </div>
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 - Desenvolvido por Jean Vitor Lilja</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Espera a página carregar por completo antes de rodar o script
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Pega todos os elementos que são links do menu e seções de conteúdo
+            const linksDoMenu = document.querySelectorAll('.nav-link');
+            const secoesDeConteudo = document.querySelectorAll('.content-section');
+
+            // Para cada link do menu, vamos adicionar uma função ao ser clicado
+            linksDoMenu.forEach(function (link) {
+                link.addEventListener('click', function () {
+
+                    // Primeiro, remove a marcação de 'ativo' de todos os links
+                    linksDoMenu.forEach(nav => nav.classList.remove('active'));
+                    // E marca como 'ativo' apenas o link que foi clicado
+                    this.classList.add('active');
+
+                    // Agora, vamos trocar o conteúdo que aparece na tela
+                    const paginaAlvo = this.getAttribute('data-page');
+
+                    // Esconde todas as seções
+                    secoesDeConteudo.forEach(section => section.classList.remove('active'));
+
+                    // E mostra apenas a seção que corresponde ao link clicado
+                    const secaoAtiva = document.getElementById(paginaAlvo);
+                    if (secaoAtiva) {
+                        secaoAtiva.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
